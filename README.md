@@ -1,5 +1,13 @@
 # kickstart.nvim
 
+
+## added mar 2026
+set symbolic link in ~/.config/nvim to point to `$WORKSPACE_ROOT`/sync/git/kickstart.nvim 
+
+```bash
+ln -s /Users/wesselheringa/dmmhp/sync/github/kickstart.nvim nvim
+```
+
 ## Introduction
 
 A starting point for Neovim that is:
