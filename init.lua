@@ -394,6 +394,8 @@ require('lazy').setup({
         pickers = {
           find_files = {
             hidden = true,
+            -- Respecteer .gitignore bestanden (standaard gedrag van ripgrep)
+            no_ignore = true,
           },
         },
         extensions = {
