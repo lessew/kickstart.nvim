@@ -13,8 +13,9 @@ local function toggle_terminal()
     vim.api.nvim_win_close(terminal_winnr, false)
     terminal_winnr = nil
   else
-    -- Open terminal in horizontal split
+    local height = math.floor(vim.o.lines * 0.35)
     vim.cmd 'split'
+    vim.cmd('resize ' .. height)
     if terminal_bufnr and vim.api.nvim_buf_is_valid(terminal_bufnr) then
       -- Reuse existing terminal buffer
       vim.api.nvim_win_set_buf(0, terminal_bufnr)
