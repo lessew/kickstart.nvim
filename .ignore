@@ -1,0 +1,26 @@
+# .ignore file - Gebruikt door ripgrep/Telescope
+# Syntax is hetzelfde als .gitignore
+# Dit bestand wordt gerespecteerd door Telescope, maar .gitignore wordt genegeerd
+
+# Voorbeeld: Negeer backup bestanden
+*.bak
+*.swp
+*.swo
+*~
+
+# Voorbeeld: Negeer build artifacts (als je deze WEL in git wilt hebben)
+# dist/
+# build/
+
+# Voorbeeld: Negeer grote data bestanden
+# *.csv
+# *.json
+# data/
+
+# Voorbeeld: Negeer test bestanden
+# *.test.js
+# *.spec.ts
+# __tests__/
+
+# Je kunt ook .ignore bestanden in submappen plaatsen voor specifieke filtering
+
