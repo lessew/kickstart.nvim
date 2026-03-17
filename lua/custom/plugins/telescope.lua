@@ -71,11 +71,18 @@ return {
       },
       pickers = {
         find_files = {
-          hidden = true,
-          additional_args = function() return { '--no-ignore-vcs' } end,
+          find_command = {
+            'fd',
+            '--type', 'f',        -- Alleen files
+            '--hidden',           -- Toon hidden files
+            '--no-ignore-vcs',    -- Negeer .gitignore, respecteer .ignore
+            '--exclude', '.git',  -- Exclude .git directory
+          },
         },
         live_grep = {
-          additional_args = function() return { '--no-ignore-vcs', '--hidden' } end,
+          additional_args = function()
+            return { '--no-ignore-vcs', '--hidden' }
+          end,
         },
       },
       extensions = {
@@ -103,19 +110,16 @@ return {
 
     -- <leader>sF: Show ALL files (ignore .ignore and .gitignore)
     vim.keymap.set('n', '<leader>sF', function()
-      builtin.find_files {
-        hidden = true,
-        no_ignore = true,
-        additional_args = function() return {} end,
-      }
+      builtin.find_files({
+        find_command = {
+          'fd',
+          '--type', 'f',
+          '--hidden',
+          '--no-ignore',        -- Negeer ALLE ignore bestanden
+          '--exclude', '.git',
+        },
+      })
     end, { desc = '[S]earch [F]iles (show all)' })
-
-    -- <leader>sA: Live grep ALL files (ignore .ignore and .gitignore)
-    vim.keymap.set('n', '<leader>sG', function()
-      builtin.live_grep {
-        additional_args = function() return { '--hidden', '--no-ignore' } end,
-      }
-    end, { desc = '[S]earch [A]ll content (show all)' })
 
     -- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
     -- it is better explained there). This allows easily switching between pickers if you prefer using something else!
