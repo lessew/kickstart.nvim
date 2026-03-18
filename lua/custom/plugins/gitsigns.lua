@@ -66,22 +66,21 @@ return {
       end
     end, { desc = 'Previous git [c]hange' })
 
-    -- Actions
-    --vim.keymap.set('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Git [h]unk [s]tage' })
-    --vim.keymap.set('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Git [h]unk [r]eset' })
-    --vim.keymap.set('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Git [h]unk [s]tage' })
-    --vim.keymap.set('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Git [h]unk [r]eset' })
-    --vim.keymap.set('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Git [h]unk [S]tage buffer' })
-    --vim.keymap.set('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Git [h]unk [u]ndo stage' })
-    --vim.keymap.set('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Git [h]unk [R]eset buffer' })
-    vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Git [h]unk [p]review' })
-    --vim.keymap.set('n', '<leader>hb', function() gitsigns.blame_line{full=true} end, { desc = 'Git [h]unk [b]lame line' })
-    --vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git [b]lame' })
-    --vim.keymap.set('n', '<leader>hd', gitsigns.diffthis, { desc = 'Git [h]unk [d]iff' })
-    --vim.keymap.set('n', '<leader>hD', function() gitsigns.diffthis('~') end, { desc = 'Git [h]unk [D]iff ~' })
-    --vim.keymap.set('n', '<leader>td', gitsigns.toggle_deleted, { desc = '[T]oggle git [d]eleted' })
+    -- Actions (all under <leader>g for [G]it)
+    vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[G]it [s]tage hunk' })
+    vim.keymap.set('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[G]it [r]eset hunk' })
+    vim.keymap.set('v', '<leader>gs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = '[G]it [s]tage hunk' })
+    vim.keymap.set('v', '<leader>gr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = '[G]it [r]eset hunk' })
+    vim.keymap.set('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[G]it [S]tage buffer' })
+    vim.keymap.set('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[G]it [u]ndo stage' })
+    vim.keymap.set('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[G]it [R]eset buffer' })
+    vim.keymap.set('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[G]it [p]review hunk' })
+    vim.keymap.set('n', '<leader>gb', function() gitsigns.blame_line{full=true} end, { desc = '[G]it [b]lame line' })
+    vim.keymap.set('n', '<leader>gB', gitsigns.toggle_current_line_blame, { desc = '[G]it toggle [B]lame' })
+    vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [d]iff' })
+    vim.keymap.set('n', '<leader>gD', function() gitsigns.diffthis('~') end, { desc = '[G]it [D]iff ~' })
 
     -- Text object
-    --vim.keymap.set({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select git hunk' })
+    vim.keymap.set({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select git hunk' })
   end,
 }

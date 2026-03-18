@@ -31,8 +31,8 @@ local function toggle_terminal()
 end
 
 -- Terminal keymaps
-vim.keymap.set('n', '<leader>tt', toggle_terminal, { desc = '[T]oggle [T]erminal' })
-vim.keymap.set('t', '<leader>tt', toggle_terminal, { desc = '[T]oggle [T]erminal' })
+vim.keymap.set('n', '<leader>t', toggle_terminal, { desc = '[T]oggle [T]erminal' })
+vim.keymap.set('t', '<leader>t', toggle_terminal, { desc = '[T]oggle [T]erminal' })
 
 -- Exit terminal mode shortcuts
 vim.keymap.set('t', '<C-x>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
